@@ -56,7 +56,7 @@ fun handleFetchAction() = flow<SideEffect> {
     getDataUseCase()
         .onSuccess { emit(DataFetched(it.data)) }
         .onFailure { emit(Error(it.message)) }
-    emit(Loading(true))
+    emit(Loading(false))
     emit(ShowToast("data fetching has been finished."))
 }
 ```
