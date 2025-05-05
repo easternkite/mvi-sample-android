@@ -22,13 +22,13 @@ MVI에는 사실 숨은 의미가 있습니다. 그중 하나는 사용자의 �
 코드로 나타내면 다음과 같습니다.
 ```kotlin 
 fun fetchData() { 
-	uiState.update { it.copy(isLoading = true) } 
-	val response = getDataUseCase() 
-	if (response.isSuccess) { 
-		uiState.update { it.copy(isLoading = false, isError = null, data = response.data } 
-	} else {
-		uiState.update { it.copy(isLoading = false, isError = response.errorMessage, data = null } 
-	}
+    uiState.update { it.copy(isLoading = true) } 
+    val response = getDataUseCase() 
+    if (response.isSuccess) { 
+        uiState.update { it.copy(isLoading = false, isError = null, data = response.data } 
+    } else {
+        uiState.update { it.copy(isLoading = false, isError = response.errorMessage, data = null } 
+    }
 }
 ```
 
