@@ -25,9 +25,9 @@ fun fetchData() {
     uiState.update { it.copy(isLoading = true) } 
     val response = getDataUseCase() 
     if (response.isSuccess) { 
-        uiState.update { it.copy(isLoading = false, isError = null, data = response.data } 
+        uiState.update { it.copy(isLoading = false, isError = null, data = response.data) } 
     } else {
-        uiState.update { it.copy(isLoading = false, isError = response.errorMessage, data = null } 
+        uiState.update { it.copy(isLoading = false, isError = response.errorMessage, data = null) } 
     }
 }
 ```
